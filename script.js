@@ -1,3 +1,52 @@
+// Перенос в шапке
+let enter = document.querySelector('.zheader__top_right');
+let place = document.querySelector('.zheader__mid_inner');
+let back = document.querySelector('.zheader__top_inner');
+window.addEventListener('resize', () => {
+    if (window.innerWidth <= 1200) {
+        place?.append(enter);
+    } else {
+        back?.append(enter);
+    }
+});
+if (window.innerWidth <= 1200) {
+    place?.append(enter);
+} else {
+    back?.append(enter);
+}
+
+let enter3 = document.querySelector('.zheader__search');
+let place3 = document.querySelector('.zheader__bot_inner');
+let back3 = document.querySelector('.zheader__mid_left');
+window.addEventListener('resize', () => {
+    if (window.innerWidth <= 1200) {
+        place3?.append(enter3);
+    } else {
+        back3?.append(enter3);
+    }
+});
+if (window.innerWidth <= 1200) {
+    place3?.append(enter3);
+} else {
+    back3?.append(enter3);
+}
+
+let enter2 = document.querySelector('.zheader__mid_links');
+let place2 = document.querySelector('.zheader__bot_inner');
+let back2 = document.querySelector('.zheader__mid_inner');
+window.addEventListener('resize', () => {
+    if (window.innerWidth <= 1200) {
+        place2?.append(enter2);
+    } else {
+        back2?.append(enter2);
+    }
+});
+if (window.innerWidth <= 1200) {
+    place2?.append(enter2);
+} else {
+    back2?.append(enter2);
+}
+
 // Слайдер для продукции
 
 const swiperGeneral = new Swiper('.swiperGeneral', {
@@ -54,11 +103,10 @@ const swiperBrands = new Swiper('.swiperBrands', {
 
 const footer_link_btn = document.querySelectorAll('.zfooter__box_top');
 
-
 footer_link_btn && Array.from(footer_link_btn).map(item => {
     item && item.addEventListener('click', (e) => {
         const link_list = e.target.parentNode.querySelector(".zfooter__box_links");
-        console.log(link_list)
         link_list && link_list.classList.toggle('active');
     }); 
 });
+
