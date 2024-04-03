@@ -1346,8 +1346,15 @@ a {
 
 .zproduct__image {
     width: 100%;
-    height: 100%;
+    height: auto;
     position: relative;
+    aspect-ratio: 1/1;
+}
+
+.zproduct__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .zproduct__tags {
@@ -1378,16 +1385,6 @@ a {
 
 .zproduct__tag[data-tag="new"] {
     background-color: #bb6bd9;
-}
-
-.zproduct__image {
-    aspect-ratio: 1/1;
-}
-
-.zproduct__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
 }
 
 .zproduct__title {
