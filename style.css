@@ -1545,7 +1545,7 @@ a {
     }
 
     .zproduct__btns {
-        grid-template-columns: 1fr 32px;
+        grid-template-columns: auto 32px;
         gap: 5px;
     }
 }
