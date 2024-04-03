@@ -1556,3 +1556,232 @@ a {
         padding: 8px;
     }
 }
+
+.zpopcat__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.zpopcat__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.zpopcat__card {
+    border-radius: 5px;
+    background: var(--fon);
+    overflow: hidden;
+    padding: 34px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 264px;
+    position: relative;
+}
+
+.zpopcat__card:hover .zpopcat__card_arrow {
+    transform: translateX(3px);
+}
+
+.zpopcat__card_title {
+    font-weight: 600;
+    font-size: clamp(0.9375rem, 0.8578rem + 0.3268vw, 1.25rem);
+    color: var(--tekst);
+    z-index: 1;
+}
+
+.zpopcat__card_img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 195px;
+    height: 195px;
+}
+
+.zpopcat__card_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.zpopcat__card_arrow {
+    width: 41px;
+    height: 41px;
+    position: relative;
+    transition: 0.25s;
+    z-index: 1;
+}
+
+.zpopcat__card_arrow img {
+    width: 100%;
+    height: 100%;
+}
+
+.zpopcat__card:nth-child(1) .zpopcat__card_title {
+    color: #fff;
+}
+
+.zpopcat__card:nth-child(2) .zpopcat__card_title,
+.zpopcat__card:nth-child(1) .zpopcat__card_title {
+    font-size: clamp(1.125rem, 1.0931rem + 0.1307vw, 1.25rem);
+}
+
+.zpopcat__card:nth-child(2) .zpopcat__card_img,
+.zpopcat__card:nth-child(1) .zpopcat__card_img {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.zpopcat__card:nth-child(2) .zpopcat__card_img img,
+.zpopcat__card:nth-child(1) .zpopcat__card_img img {
+    object-fit: cover;
+}
+
+.zpopcat__card:nth-child(1) {
+    grid-area: 1 / 1 / 3 / 2;
+}
+
+.zpopcat__card:nth-child(2) {
+    grid-area: 1 / 2 / 3 / 3;
+}
+
+.zpopcat__card:nth-child(3) {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+.zpopcat__card:nth-child(4) {
+    grid-area: 1 / 4 / 2 / 5;
+}
+
+.zpopcat__card:nth-child(5) {
+    grid-area: 2 / 3 / 3 / 4;
+}
+
+.zpopcat__card:nth-child(6) {
+    grid-area: 2 / 4 / 3 / 5;
+}
+
+@media screen and (max-width: 1300px) {
+    .zpopcat__card {
+        padding: 24px;
+    }
+
+    .zpopcat__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    .zpopcat__card:nth-child(1) {
+        grid-area: auto;
+    }
+
+    .zpopcat__card:nth-child(2) {
+        grid-area: auto;
+    }
+
+    .zpopcat__card:nth-child(3) {
+        grid-area: auto;
+    }
+
+    .zpopcat__card:nth-child(4) {
+        grid-area: auto;
+    }
+
+    .zpopcat__card:nth-child(5) {
+        grid-area: auto;
+    }
+
+    .zpopcat__card:nth-child(6) {
+        grid-area: auto;
+    }
+
+    .zpopcat__card:nth-child(2) .zpopcat__card_img {
+        left: auto;
+        top: auto;
+        width: 195px;
+        height: 195px;
+        object-fit: contain;
+    }
+
+    .zpopcat__card:nth-child(2) .zpopcat__card_img img {
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .zpopcat__card_img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .zpopcat__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .zpopcat__card {
+        min-height: 230px;
+    }
+
+    .zpopcat__card:nth-child(1) {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+
+    .zpopcat__card:nth-child(2) {
+        grid-area: 2 / 1 / 3 / 3;
+    }
+
+    .zpopcat__card:nth-child(3) {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+
+    .zpopcat__card:nth-child(4) {
+        grid-area: 3 / 2 / 4 / 3;
+    }
+
+    .zpopcat__card:nth-child(5) {
+        grid-area: 4 / 1 / 5 / 2;
+    }
+
+    .zpopcat__card:nth-child(6) {
+        grid-area: 4 / 2 / 5 / 3;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .zpopcat__inner {
+        gap: 20px;
+    }
+
+    .zpopcat__card:nth-child(2) .zpopcat__card_img {
+        width: 180px;
+        height: 150px;
+    }
+
+    .zpopcat__card {
+        padding: 20px;
+        min-height: 178px;
+    }
+
+    .zpopcat__card_arrow {
+        width: 35px;
+        height: 35px;
+    }
+
+    .zpopcat__card_img {
+        width: 106px;
+        height: 106px;
+    }
+}
