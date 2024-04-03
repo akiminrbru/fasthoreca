@@ -71,9 +71,8 @@ const swiperGeneral = new Swiper('.swiperGeneral', {
         },
         769: {
             slidesPerView: 3,
-            spaceBetween: 0,
         },
-        371: {
+        370: {
             spaceBetween: 20,
         },
     }
