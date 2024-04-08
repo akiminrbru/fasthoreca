@@ -15,7 +15,7 @@ if (window.innerWidth <= 1200) {
     back?.append(enter);
 }
 
-let enter3 = document.querySelector('.zheader__search');
+let enter3 = document.querySelector('.zheader__search_wrapper');
 let place3 = document.querySelector('.zheader__bot_inner');
 let back3 = document.querySelector('.zheader__mid_left');
 window.addEventListener('resize', () => {
@@ -109,3 +109,14 @@ footer_link_btn && Array.from(footer_link_btn).map(item => {
     }); 
 });
 
+// Открытие поиск
+
+const search_btn = document.querySelector('#search_btn');
+const search_block = document.querySelector('.zheader__search_wrapper');
+
+console.log(search_block);
+
+
+search_btn?.addEventListener('click', () => {
+    search_block?.classList.add('active');
+});
