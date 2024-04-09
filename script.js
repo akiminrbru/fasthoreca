@@ -111,12 +111,14 @@ footer_link_btn && Array.from(footer_link_btn).map(item => {
 
 // Открытие поиск
 
-const search_btn = document.querySelector('#search_btn');
+const search_btn_open = document.querySelector('#search_btn');
+const serch_btn_close = document.querySelector('.zheader__search_close');
 const search_block = document.querySelector('.zheader__search_wrapper');
 
-console.log(search_block);
-
-
-search_btn?.addEventListener('click', () => {
+search_btn_open?.addEventListener('click', () => {
     search_block?.classList.add('active');
+});
+
+serch_btn_close?.addEventListener('click', () => {
+    search_block?.classList.remove('active');
 });
