@@ -2083,11 +2083,11 @@ a {
         min-width: auto;
         min-height: auto;
         box-shadow: none;
-        z-index: 2;
+        z-index: 5;
         background-color: transparent;
         background-color: #fff;
         padding: 28px 25px;
-        height: 100dvh;
+        height: 100%;
     }
 
     .zheader__subcatalog.active {
