@@ -24,6 +24,10 @@ body {
     padding-top: 184px;
 }
 
+body.active {
+    overflow-y: hidden;
+}
+
 @media screen and (max-width: 1200px) {
     body {
         padding-top: 139px;
@@ -353,10 +357,26 @@ a {
     cursor: pointer;
 }
 
+.zheader__catalog_btn.active .zheader__catalog_btn_img {
+    background-image: url(assets/icons/close.svg);
+}
+
 .zheader__catalog_btn_img {
     width: 24px;
     height: 24px;
     background-image: url(assets/icons/burgerOpen.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.zheader_burgerOpen {
+    width: 24px;
+    height: 24px;
+    background-image: url(assets/icons/burgerOpen.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: 0;
 }
 
 @media screen and (max-width: 1600px) {
@@ -449,7 +469,7 @@ a {
         display: none;
     }
 
-    .zheader__search_close{
+    .zheader__search_close {
         display: none;
     }
 }
@@ -493,15 +513,6 @@ a {
 
     .zheader__mid_links a:hover {
         transform: translateY(0);
-    }
-
-    .zheader__catalog_btn {
-        background-color: transparent;
-        padding: 0;
-    }
-
-    .zheader__catalog_btn span {
-        display: none;
     }
 
     .zheader__bot_inner {
@@ -677,23 +688,23 @@ a {
     color: #fff;
 }
 
-.zfooter__social {
+.zsocial {
     display: flex;
     align-items: center;
     gap: 4px;
 }
 
-.zfooter__social a {
+.zsocial a {
     width: 40px;
     height: 40px;
     transition: 0.25s;
 }
 
-.zfooter__social a:hover {
+.zsocial a:hover {
     transform: translateY(-3px);
 }
 
-.zfooter__social a img {
+.zsocial a img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1835,5 +1846,324 @@ a {
     .zpopcat__card_img {
         width: 106px;
         height: 106px;
+    }
+}
+
+.zheader__catalog {
+    position: relative;
+}
+
+.zheader__subcatalog {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    position: absolute;
+    background-color: #fff;
+    z-index: -1;
+    display: none;
+    flex-direction: column;
+    box-shadow: 1px 1px 10px -1px rgba(0, 0, 0, 0.2);
+    min-width: 350px;
+    min-height: 696px;
+}
+
+.zheader__subcatalog.active {
+    display: flex;
+}
+
+.zheader__subcatalog_links {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #fff;
+    display: none;
+    flex-direction: column;
+    box-shadow: 1px 1px 10px -1px rgba(0, 0, 0, 0.2);
+    min-height: 696px;
+    min-width: 350px;
+}
+
+.zheader__subcatalog_link {
+    padding: 6px 10px;
+    display: block;
+    color: var(--knopki);
+    font-size: 15px;
+}
+
+.zheader__subcatalog_link:hover {
+    text-decoration: underline;
+}
+
+.zheader__subcatalog_title {
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 10px;
+}
+
+.zheader__subcatalog_item:hover .zheader__subcatalog_title {
+    color: var(--knopki);
+    background-color: rgb(245, 245, 245);
+    transition: 0.25s;
+}
+
+.zheader__subcatalog_item:hover .zheader__subcatalog_links {
+    display: flex;
+}
+
+.zheader__subcatalog_arrow {
+    width: 100%;
+    height: 12px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.zheader__subcatalog_arrow img {
+    width: 12px;
+    height: 12px;
+}
+
+.burger_wrap {
+    background: rgba(23, 23, 24, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+
+.burger_wrap.active {
+    display: block;
+}
+
+.burger {
+    width: 100%;
+    max-width: 365px;
+    height: 100%;
+    background-color: #fff;
+    padding: 20px 25px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.burger__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.burger__close {
+    width: 17px;
+    height: 17px;
+}
+
+.burger__top_logo {
+    width: 160px;
+    height: 36px;
+}
+
+.burger__top_logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.burger__close img {
+    width: 100%;
+    height: 100%;
+}
+
+.burger__anotherlinks {
+    margin: 30px 0;
+    padding: 30px 0;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.burger__anotherlinks li a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    color: var(--tekst);
+}
+
+.burger__anotherlinks li a svg {
+    width: 20px;
+    height: 20px;
+}
+
+.burger_info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.burger_phone {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 129%;
+    color: var(--tekst);
+}
+
+.burger_email {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 136%;
+    color: var(--knopki);
+}
+
+.burger_location {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 186%;
+    color: var(--tekst);
+}
+
+.burger__box {
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.burger__box_links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.burger__box_links a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--tekst);
+}
+
+@media screen and (min-width: 769px) {
+    .zheader__catalog_btn_arrow {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .zheader__catalog {
+        position: static;
+    }
+
+    .zheader__subcatalog {
+        display: none;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        min-width: auto;
+        min-height: auto;
+        box-shadow: none;
+        z-index: 2;
+        background-color: transparent;
+        background-color: #fff;
+        padding: 28px 25px;
+    }
+
+    .zheader__subcatalog.active {
+        display: flex;
+    }
+
+    .zheader__catalog_btn {
+        background-color: transparent;
+        padding: 0;
+        color: var(--tekst);
+        display: grid;
+        width: 100%;
+        grid-template-columns: auto auto 1fr;
+    }
+
+    .zheader__catalog_btn_arrow {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .zheader__catalog_btn_img {
+        background-image: url("/assets/icons/burgerOpenBlack.svg");
+    }
+
+    .zheader__subcatalog_top {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        padding-bottom: 20px;
+    }
+
+    .zheader__subcatalog_back {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .zheader__subcatalog_backBtn {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+    }
+
+    .zheader__subcatalog_topTitle {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 500;
+        font-size: 16px;
+        color: var(--tekst);
+    }
+
+    .zheader__subcatalog_topTitle_img {
+        width: 24px;
+        height: 24px;
+        background-image: url(assets/icons/burgerOpenBlack.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .zheader__subcatalog_title {
+        padding: 10px 0;
+        font-size: 14px;
+    }
+
+    .zheader__subcatalog_title a {
+        color: var(--tekst);
+    }
+
+    .zheader__subcatalog_links {
+        position: static;
+        min-height: auto;
+        min-width: auto;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .zheader__subcatalog_link {
+        color: var(--tekst);
+    }
+
+    .zheader__subcatalog_item:hover .zheader__subcatalog_title {
+        color: var(--tekst);
+        background-color: transparent;
+    }
+
+    .zheader__subcatalog_item:hover .zheader__subcatalog_links {
+        display: flex;
     }
 }

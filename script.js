@@ -1,3 +1,7 @@
+// body
+
+const body = document.querySelector('body');
+
 // Перенос в шапке
 let enter = document.querySelector('.zheader__top_right');
 let place = document.querySelector('.zheader__mid_inner');
@@ -127,3 +131,71 @@ search_btn_open?.addEventListener('click', () => {
 serch_btn_close?.addEventListener('click', () => {
     search_block?.classList.remove('active');
 });
+
+// Открытие каталога
+
+const catalog_btn = document.querySelector(".zheader__catalog_btn");
+const subcatalog = document.querySelector('.zheader__subcatalog');
+
+catalog_btn?.addEventListener('click', () => {
+    if (window.innerWidth > 768) {
+        catalog_btn?.classList.toggle('active');
+        subcatalog?.classList.toggle('active');
+    } else {
+        subcatalog?.classList.add('active');
+    }
+});
+
+// Subcatalog back
+
+const subcatalog_backBtn = document.querySelector('.zheader__subcatalog_backBtn');
+
+subcatalog_backBtn?.addEventListener('click', () => {
+    subcatalog?.classList.remove('active');
+});
+
+// Открытие бургер меню
+
+const burger_open = document.querySelector('.zheader_burgerOpen');
+const burger__close = document.querySelector('.burger__close');
+const burger_wrap = document.querySelector('.burger_wrap');
+const burger = document.querySelector('.burger');
+
+burger_open?.addEventListener('click', () => {
+    burger_wrap?.classList.add('active');
+    body?.classList.add('active');
+});
+
+burger__close?.addEventListener('click', () => {
+    burger_wrap?.classList.remove('active');
+    body?.classList.remove('active');
+});
+
+burger_wrap?.addEventListener('click', () => {
+    burger_wrap?.classList.remove('active');
+    body?.classList.remove('active');
+});
+
+burger?.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+
+
+// Перенос каталога
+
+let enter4 = document.querySelector('.zheader__catalog');
+let place4 = document.querySelector('.burger__box');
+let back4 = document.querySelector('.zheader__bot_inner');
+window.addEventListener('resize', () => {
+    if (window.innerWidth <= 768) {
+        place4?.prepend(enter4);
+    } else {
+        back4?.prepend(enter4);
+    }
+});
+if (window.innerWidth <= 768) {
+    place4?.prepend(enter4);
+} else {
+    back4?.prepend(enter4);
+}
+
