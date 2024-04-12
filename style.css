@@ -1904,6 +1904,10 @@ a {
     padding: 6px 10px;
 }
 
+.zheader__subcatalog_title a:hover {
+    text-decoration: underline;
+}
+
 .zheader__subcatalog_item:hover .zheader__subcatalog_title {
     color: var(--knopki);
     background-color: rgb(245, 245, 245);
@@ -1924,6 +1928,7 @@ a {
 .zheader__subcatalog_arrow img {
     width: 12px;
     height: 12px;
+    pointer-events: none;
 }
 
 .burger_wrap {
@@ -2056,6 +2061,10 @@ a {
     .zheader__catalog_btn_arrow {
         display: none;
     }
+
+    .zheader__subcatalog_top {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -2105,7 +2114,7 @@ a {
         display: flex;
         flex-direction: column;
         gap: 35px;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
     }
 
     .zheader__subcatalog_back {
@@ -2164,6 +2173,10 @@ a {
     }
 
     .zheader__subcatalog_item:hover .zheader__subcatalog_links {
+        display: none;
+    }
+
+    .zheader__subcatalog_item.active .zheader__subcatalog_links {
         display: flex;
     }
 }

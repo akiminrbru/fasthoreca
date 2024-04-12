@@ -154,21 +154,38 @@ subcatalog_backBtn?.addEventListener('click', () => {
     subcatalog?.classList.remove('active');
 });
 
+// subcatalog links open
+
+const subcatalog_arrow = document.querySelectorAll('.zheader__subcatalog_arrow');
+const subcatalog_arrow_array = subcatalog_arrow && Array.from(subcatalog_arrow);
+
+subcatalog_arrow_array?.map(item => {
+    item?.addEventListener('click', (e) => {
+        const linkItem = e.target.parentNode.parentNode;
+        linkItem?.classList.toggle('active');
+    });
+});
+
+
 // Открытие бургер меню
 
 const burger_open = document.querySelector('.zheader_burgerOpen');
-const burger__close = document.querySelector('.burger__close');
+const burger__close = document.querySelectorAll('.burger__close');
 const burger_wrap = document.querySelector('.burger_wrap');
 const burger = document.querySelector('.burger');
+
+const burger__close_array = burger__close && Array.from(burger__close);
 
 burger_open?.addEventListener('click', () => {
     burger_wrap?.classList.add('active');
     body?.classList.add('active');
 });
 
-burger__close?.addEventListener('click', () => {
-    burger_wrap?.classList.remove('active');
-    body?.classList.remove('active');
+burger__close_array?.map(item => {
+    item?.addEventListener('click', () => {
+        burger_wrap?.classList.remove('active');
+        body?.classList.remove('active');
+    });
 });
 
 burger_wrap?.addEventListener('click', () => {
