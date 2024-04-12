@@ -2107,7 +2107,7 @@ a {
     }
 
     .zheader__catalog_btn_img {
-        background-image: url("/assets/icons/burgerOpenBlack.svg");
+        background-image: url("assets/icons/burgerOpenBlack.svg");
     }
 
     .zheader__subcatalog_top {
